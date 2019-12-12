@@ -1,4 +1,4 @@
-/* import React from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 
 export const App = () => {
@@ -9,5 +9,4 @@ export const App = () => {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root')) */
-console.log('ok')
+ReactDOM.render(<App />, document.getElementById('root'))
