@@ -1,0 +1,20 @@
+# Logs
+.DS_*
+*.log
+logs
+npm-debug.log*
+
+
+psd
+thumb
+sketch
+
+# Dependency directories
+node_modules/
+bower_componets
+
+# Environment variables file
+.env
+
+# react  
+public/
