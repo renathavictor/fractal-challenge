@@ -1,5 +1,6 @@
 
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   entry: path.join(__dirname, 'src', 'index'),
@@ -9,6 +10,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      }, 
+      {
+        test: /\.[ac]css$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
@@ -19,7 +24,11 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist')
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true
   }
 }

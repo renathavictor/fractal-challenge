@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-export const App = () => {
-  return (
-    <div>
-      <h1>Hello word!</h1>
-    </div>
-  )
-}
+import App from './App'
+/* import './style.scss' */
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const title = 'Working'
+
+
+ReactDOM.render(<App title={title} />, document.getElementById('root'))
+
+module.hot.accept();

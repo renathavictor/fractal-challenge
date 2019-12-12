@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,9 @@
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
+    "node-sass": "^4.13.0",
+    "react-hot-loader": "^4.12.18",
+    "sass-loader": "^8.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
