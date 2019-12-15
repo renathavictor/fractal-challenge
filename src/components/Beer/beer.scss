@@ -1,0 +1,21 @@
+.card {
+  display: grid;
+/*   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr; */
+  grid-template-areas: 
+    "name img"
+    "tagline img";
+  width: 25%;
+  box-shadow: 5px 5px 10px -1px rgba(0, 0, 0, 0.75);
+
+  img {
+    height: 12rem;
+    grid-area: img;
+  }
+}
+
+.card-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+}

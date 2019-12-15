@@ -1,14 +1,14 @@
 import React from 'react'
 
 import Header from './Header'
-import CardBox from './CardBox'
+import CardList from './Beer/CardList'
 import Footer from './Footer'
 
 const Layout = () => {
   return (
     <React.Fragment>
       <Header />
-      <CardBox />
+      <CardList />
       <Footer />
     </React.Fragment>
   )

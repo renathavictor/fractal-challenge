@@ -7,7 +7,7 @@ $dark-color: #222;
 $light-color: #f4f4f4;
 
 
-body {
+* {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
@@ -15,5 +15,17 @@ body {
 }
 
 h1 {
-  color: $primary-color;
+  color: $dark-color;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.p-1 {
+  padding: 1rem;
 }
