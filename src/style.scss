@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* GLOBAL STYLES */
+
+$primary-color:  #F7CE5B;
+$dark-color: #222;
+$light-color: #f4f4f4;
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: $primary-color;
+}

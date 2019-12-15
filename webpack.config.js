@@ -13,16 +13,18 @@ module.exports = {
       }, 
       {
         test: /\.[ac]css$/i,
+        exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: ''
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

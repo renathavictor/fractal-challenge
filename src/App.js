@@ -1,10 +1,12 @@
 import React from 'react'
 
-const App = ({ title }) => {
+import Layout from './components/Layout'
+
+const App = () => {
   return (
-    <div>
-      {title}
-    </div>
+    <React.Fragment>
+      <Layout />
+    </React.Fragment>
   )
 }
 

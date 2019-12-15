@@ -1,12 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 
-import App from './App'
 /* import './style.scss' */
+import App from './App'
 
-const title = 'Working'
+const app = (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+)
 
-
-ReactDOM.render(<App title={title} />, document.getElementById('root'))
+ReactDOM.render(app, document.getElementById('root'))
 
 module.hot.accept();
