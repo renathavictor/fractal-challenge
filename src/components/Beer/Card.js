@@ -8,7 +8,7 @@ const Card = ({id, name, image, tagline}) => {
     <Link
       className="card m-2 p-1"
       to={{
-        pathname: `beer/${(name).replace(' ', '')}`,
+        pathname: `beer/${(id)}`,
         state: {
           id: id 
         }

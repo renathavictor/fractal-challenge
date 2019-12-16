@@ -5,6 +5,7 @@ const api = axios.create({
 })
 
 export async function getBeers() {
+  console.log("get beers")
   return await api.get('beers');
 }
 

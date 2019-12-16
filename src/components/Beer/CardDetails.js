@@ -10,8 +10,6 @@ const CardDetails = (props) => {
   const [beer, setBeer] = useState([])
 
   const { id } = props.location.state
-  console.log(id)
-  console.log(beer)
 
   useEffect(() => {
     async function loadBeer() {
