@@ -5,6 +5,10 @@ const api = axios.create({
 })
 
 export async function getBeers() {
-  console.log('get')
   return await api.get('beers');
+}
+
+export async function getBeer(id) {
+  console.log("AQUI NO GET BEER"+id)
+  return await api.get(`beers/${id}`);
 }

@@ -5,12 +5,12 @@ import { BrowserRouter } from 'react-router-dom'
 import './style.scss'
 import App from './App'
 
-const app = (
+/* const app = (
   <BrowserRouter>
     <App />
   </BrowserRouter>
-)
+) */
 
-ReactDOM.render(app, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 
 module.hot.accept();

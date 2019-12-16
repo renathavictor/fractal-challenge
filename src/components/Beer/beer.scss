@@ -1,3 +1,5 @@
+@import '../../style.scss';
+
 .card {
   display: grid;
 /*   grid-template-columns: 1fr 1fr;
@@ -19,3 +21,29 @@
   justify-content: space-evenly;
   flex-flow: row wrap;
 }
+
+.container-list {
+  width: 85vh;
+  height: 85vh;
+  background-color: $light-color;
+  box-shadow: 5px 5px 10px -1px rgba(0, 0, 0, 0.75);
+  display: grid;
+  grid-template-areas: 
+    "name name"
+    "img description"
+    "img tagline";
+
+    .beer-name {
+      grid-area: name;
+    }
+  
+    .beer-description {
+      grid-area: description;
+      text-align: justify;
+    }
+
+    img {
+      height: 20rem;
+      grid-area: img;
+    }
+} 

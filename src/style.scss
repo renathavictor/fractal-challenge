@@ -12,6 +12,7 @@ $light-color: #f4f4f4;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 h1 {
@@ -22,10 +23,18 @@ h1 {
   text-align: center;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .m-2 {
   margin: 2rem;
 }
 
 .p-1 {
   padding: 1rem;
+}
+
+.p-2 {
+  padding: 2rem;
 }

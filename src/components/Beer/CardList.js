@@ -11,11 +11,12 @@ const CardBox = () => {
 
   useEffect(() => {
     async function loadBeers() {
-      const response = await getBeers();
+      const response = await getBeers()
       setBeers(response.data)
     }
     loadBeers()
   }, [])
+
 
   return (
     <div>
