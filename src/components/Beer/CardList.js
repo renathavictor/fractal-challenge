@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import { getBeers } from '../../services/api'
+import React from 'react'
 
 import Card from './Card'
 import './beer.scss'
 
 
-const CardBox = () => {
+const CarList = ({ beers, loading }) => {
 
-  const [beers, setBeers] = useState([])
-
-  useEffect(() => {
-    async function loadBeers() {
-      const response = await getBeers()
-      setBeers(response.data)
-    }
-    loadBeers()
-  }, [])
-
+  if (loading) {
+    return <h2>Loading...colocar um spiner</h2>
+  }
 
   return (
     <div>
-      <h1 className="primary-color text-center">List of Beers</h1>
       <div className="card-list">
         {
          beers.map(beer => {
@@ -32,4 +23,4 @@ const CardBox = () => {
   )
 }
 
-export default CardBox
+export default CarList

@@ -1,14 +1,14 @@
 import React from 'react'
 
 import Header from './Header'
-import CardList from './Beer/CardList'
+import Home from './Home'
 import Footer from './Footer'
 
-const Layout = () => {
+const Layout = (props) => {
   return (
     <React.Fragment>
       <Header />
-      <CardList />
+      <Home />
       <Footer />
     </React.Fragment>
   )

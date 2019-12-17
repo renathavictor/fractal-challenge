@@ -16,7 +16,7 @@ const Card = ({id, name, image, tagline}) => {
     >
       {/* <div className="card m-2 p-1"> */}
         <h1 className="text-center">{name}</h1>
-        <img src={image} alt="beer image" />
+        <img src={image} alt="beer" />
         <p>{tagline}</p>
       {/* </div> */}
     </Link>

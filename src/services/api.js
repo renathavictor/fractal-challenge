@@ -5,11 +5,15 @@ const api = axios.create({
 })
 
 export async function getBeers() {
-  console.log("get beers")
-  return await api.get('beers');
+  console.log("GET BEERS")
+  return await api.get('beers')
+    .then(res => res)
+    .catch(err => console.log(err));
 }
 
 export async function getBeer(id) {
-  console.log("AQUI NO GET BEER"+id)
-  return await api.get(`beers/${id}`);
+  console.log("GET BEER "+id)
+  return await api.get(`beers/${id}`)
+    .then(res => res)
+    .catch(err => console.log(err));
 }
