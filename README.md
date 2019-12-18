@@ -14,6 +14,9 @@
 #### Iniciar a aplicação
 > npm start
 
+#### Rodando localmente em
+> http://localhost:8080/
+
 ### Deploy no netlify
 https://fractal-challenge.netlify.com/
 
