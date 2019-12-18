@@ -1,22 +1,21 @@
 import React from 'react'
 
-const Pagination = ({ beersPerPage, totalBeers, paginate }) => {
+const Pagination = ({ paginate }) => {
   const pageNumbers = []
 
-  for (let index = 1; index < Math.ceil(totalBeers / beersPerPage); index++) {
+  for (let index = 1; index < 10; index++) {
     pageNumbers.push(index)    
   }
   return (
-    <nav>
       <ul>
+        
         {pageNumbers.map(number => (
           <li key={number}>
-            <button onClick={() => paginate(number)} >{number}</button>
+            <button className="pageNumber" onClick={() => paginate(number)} >{number}</button>
           </li>
         ))}
       </ul>
       
-    </nav>
   )
 }
 

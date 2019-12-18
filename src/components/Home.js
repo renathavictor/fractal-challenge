@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getBeers } from '../services/api'
+import { getBeers, getBeersPerPage } from '../services/api'
 
 import Pagination from './Pagination'
 import CardList from './Beer/CardList'
@@ -11,31 +11,44 @@ const CardBox = () => {
   const [beers, setBeers] = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [beersPerPage] = useState(6)
 
   useEffect(() => {
     async function loadBeers() {
       setLoading(true)
-      const response = await getBeers()
+      //const response = await getBeers()
+      const response = await getBeersPerPage(currentPage)
       setBeers(response.data)
       setLoading(false)
     }
     loadBeers()
-  }, [])
+  }, [currentPage])
 
-  const indexOfLastBeer = currentPage * beersPerPage
+/*   const indexOfLastBeer = currentPage * beersPerPage
   const indexOfFirstBeer = indexOfLastBeer - beersPerPage
-  const currentBeer = beers.slice(indexOfFirstBeer, indexOfLastBeer)
+  const currentBeer = beers.slice(indexOfFirstBeer, indexOfLastBeer) */
 
   // Change page
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
+  const prevsButton = (
+    currentPage === 1 ? <button className="btnPage" disabled>Previous</button> : <button className="btnPage" onClick={() => paginate(currentPage-1)}>Previous</button>
+    )
+    
+    const nextButton = (
+      currentPage === 9 ? <button className="btnPage" disabled>Previous</button> : <button className="btnPage" onClick={() => paginate(currentPage+1)}>Next</button>
+  )
+
+
+
   return (
     <div>
-      <h1 className="primary-color text-center">List of Beers</h1>
-      <CardList beers={currentBeer} loading={loading} />
-      <Pagination beersPerPage={beersPerPage} totalBeers={beers.length} paginate={paginate} />
+      <CardList beers={beers} loading={loading} />
+      <nav className="pagination">
+        {prevsButton}
+        <Pagination paginate={paginate} />
+        {nextButton}
+      </nav>
     </div>
   )
 }

@@ -5,14 +5,25 @@
 /*   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr; */
   grid-template-areas: 
-    "name img"
-    "tagline img";
-  width: 25%;
+    "img . "
+    "img name"
+    "img tagline"
+    "img . ";
+  width: 350px;
   box-shadow: 5px 5px 10px -1px rgba(0, 0, 0, 0.75);
 
   img {
-    height: 12rem;
+    height: 9rem;
     grid-area: img;
+    padding-left: 2rem;
+  }
+
+  h2 {
+    grid-area: name;
+  }
+
+  p {
+    grid-area: tagline;
   }
 }
 
@@ -20,13 +31,15 @@
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;
+  margin-top: 3rem;
 }
 
 .container-list {
-  width: 85vh;
-  height: 85vh;
+  width: 75vh;
+  height: 65vh;
   background-color: $light-color;
   box-shadow: 5px 5px 10px -1px rgba(0, 0, 0, 0.75);
+  margin-top: 3rem;
   display: grid;
   grid-template-areas: 
     "name name"
