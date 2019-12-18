@@ -1,6 +1,6 @@
 @import '../../style.scss';
 
-.card {
+.beer {
   display: grid;
 /*   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr; */
@@ -27,11 +27,12 @@
   }
 }
 
-.card-list {
+.beer-list {
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;
-  margin-top: 3rem;
+  margin: 3rem auto;
+  width: 80%;
 }
 
 .container-list {

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 import './beer.scss'
 
-const Card = ({id, name, image, tagline}) => {
+const Beer = ({id, name, image, tagline}) => {
   return (
     <Link
-      className="card m-2 p-1"
+      className="beer m-2 p-1"
       to={{
-        pathname: `beer/${(id)}`,
+        pathname: `beer/${name.replace(/ /gm, '')}`,
         state: {
           id: id 
         }
@@ -21,4 +21,4 @@ const Card = ({id, name, image, tagline}) => {
   )
 }
 
-export default Card
+export default Beer

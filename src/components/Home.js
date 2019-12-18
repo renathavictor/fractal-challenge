@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { getBeers, getBeersPerPage } from '../services/api'
 
 import Pagination from './Pagination'
-import CardList from './Beer/CardList'
+import BeerList from './Beer/BeerList'
 import './Beer/beer.scss'
 
 
-const CardBox = () => {
+const Home = () => {
 
   const [beers, setBeers] = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
+  const [beersPerPage] = useState(12)
 
   useEffect(() => {
     async function loadBeers() {
@@ -23,7 +24,9 @@ const CardBox = () => {
     loadBeers()
   }, [currentPage])
 
-/*   const indexOfLastBeer = currentPage * beersPerPage
+/*   
+  -- USE FOR RENDER LINK WITH ALL BEERS
+  const indexOfLastBeer = currentPage * beersPerPage
   const indexOfFirstBeer = indexOfLastBeer - beersPerPage
   const currentBeer = beers.slice(indexOfFirstBeer, indexOfLastBeer) */
 
@@ -32,25 +35,23 @@ const CardBox = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
   const prevsButton = (
-    currentPage === 1 ? <button className="btnPage" disabled>Previous</button> : <button className="btnPage" onClick={() => paginate(currentPage-1)}>Previous</button>
+    currentPage === 1 ? <button className="btnPage pageNumber" disabled>Previous</button> : <button className="btnPage pageNumber" onClick={() => paginate(currentPage-1)}>Previous</button>
     )
     
     const nextButton = (
-      currentPage === 9 ? <button className="btnPage" disabled>Previous</button> : <button className="btnPage" onClick={() => paginate(currentPage+1)}>Next</button>
+      currentPage >= 10 ? <button className="btnPage pageNumber" disabled>Previous</button> : <button className="btnPage pageNumber" onClick={() => paginate(currentPage+1)}>Next</button>
   )
-
-
 
   return (
     <div>
-      <CardList beers={beers} loading={loading} />
+      <BeerList beers={beers} loading={loading} />
       <nav className="pagination">
         {prevsButton}
-        <Pagination paginate={paginate} />
+        <Pagination paginate={paginate} currentPage={currentPage} />
         {nextButton}
       </nav>
     </div>
   )
 }
 
-export default CardBox
+export default Home

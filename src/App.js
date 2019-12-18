@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Layout from './components/Layout'
-import CardDetails from './components/Beer/CardDetails'
+import BeerDetails from './components/Beer/BeerDetails'
 import errorRoute from './components/errorRoute'
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route path="/" exact component={Layout} />
-        <Route path="/beer/:id" exact component={CardDetails} />
+        <Route path="/beer/:name" exact component={BeerDetails} />
         <Route path="*" component={errorRoute} />
       </Switch>
     </Router>

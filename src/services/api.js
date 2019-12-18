@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 export async function getBeers() {
-  return await api.get('beers')
+  return await api.get('beers?per_page=80')
     .then(res => res)
     .catch(err => console.log(err));
 }
